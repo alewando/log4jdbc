@@ -475,6 +475,9 @@ public class DriverSpy implements Driver {
 			subDrivers.add("org.postgresql.Driver");
 			subDrivers.add("org.hsqldb.jdbcDriver");
 			subDrivers.add("org.h2.Driver");
+			subDrivers.add("com.ibm.db2.jcc.DB2Driver");
+			subDrivers.add("COM.ibm.db2.jdbc.app.DB2Driver");
+			subDrivers.add("COM.ibm.db2.jdbc.net.DB2Driver");
 		}
 
 		// look for additional driver specified in properties
@@ -520,6 +523,7 @@ public class DriverSpy implements Driver {
 		SqlServerRdbmsSpecifics sqlServer = new SqlServerRdbmsSpecifics();
 		OracleRdbmsSpecifics oracle = new OracleRdbmsSpecifics();
 		MySqlRdbmsSpecifics mySql = new MySqlRdbmsSpecifics();
+		Db2RdbmsSpecifics db2 = new Db2RdbmsSpecifics();
 
 		/** create lookup Map for specific rdbms formatters */
 		rdbmsSpecifics = new HashMap();
@@ -531,6 +535,9 @@ public class DriverSpy implements Driver {
 		rdbmsSpecifics
 				.put("weblogic.jdbc.sqlserver.SQLServerDriver", sqlServer);
 		rdbmsSpecifics.put("com.mysql.jdbc.Driver", mySql);
+		rdbmsSpecifics.put("com.ibm.db2.jcc.DB2Driver", db2);
+		rdbmsSpecifics.put("COM.ibm.db2.jdbc.app.DB2Driver", db2);
+		rdbmsSpecifics.put("COM.ibm.db2.jdbc.net.DB2Driver", db2);
 
 		log.debug("... log4jdbc initialized! ...");
 	}

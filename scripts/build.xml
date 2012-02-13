@@ -251,7 +251,7 @@
 				status="release"
 				forcedeliver="true"
 				overwrite="true"
-				srcivypattern="ivy.xml}" 
+				srcivypattern="ivy.xml" 
 				haltonmissing="true"
 				warnonmissing="true" />  
 	</target>                         
